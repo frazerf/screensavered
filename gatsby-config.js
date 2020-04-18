@@ -1,3 +1,9 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
+var GSAobj = JSON.parse(process.env.GSA_API_KEY)
+
 module.exports = {
   siteMetadata: {
     title: `Screensaver Logo`,
@@ -19,7 +25,7 @@ module.exports = {
       options: {
           spreadsheetId: '1MZQTZz6owQCD9gpY7D86HIQjxqgihsIpm-RZ3kgJFVw',
           worksheetTitle: 'Sheet1',
-          credentials: require('./credentials/client_secret.json')
+          credentials: GSAobj,
       }
     },
     `gatsby-transformer-sharp`,
