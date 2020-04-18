@@ -24,6 +24,13 @@ class Index extends React.Component {
 
   render() {
     const blogItem = this.props.data.allGoogleSheetSheet1Row.edges;
+    function shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
     
 
     return (
@@ -34,7 +41,7 @@ class Index extends React.Component {
             elementType={'div'} // default 'div'
             options={flickityHeroOptions}
           >
-            {blogItem.map(({ node }) => {
+            {shuffle(blogItem).map(({ node }) => {
               var rand = Math.floor((Math.random() * 357));
               return (
               <div className="screensaver-carousel--item" style={{background: "hsl(" + rand +",43%,80%)"}} key={node.id}>
