@@ -44,12 +44,12 @@ class Index extends React.Component {
                     <div class="meta">{node.artist} -</div>
                     <div class="meta">&nbsp;{node.song}</div>
                     {node.spotifylink !== null &&
-                      <a href={'http://' + node.spotifylink} target="_blank" rel="noopener noreferrer">
+                      <a href={node.spotifylink} target="_blank" rel="noopener noreferrer">
                         <span className="icon-spotify"></span>
                       </a>
                     }
                     {node.youtubelink !== null &&
-                      <a href={'http://' + node.youtubelink} target="_blank" rel="noopener noreferrer">
+                      <a href={node.youtubelink} target="_blank" rel="noopener noreferrer">
                         <span className="icon-youtube"></span>
                       </a>
                     }
