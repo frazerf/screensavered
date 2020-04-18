@@ -28,8 +28,33 @@
         display: flex;
         align-items: center;
         pointer-events: none;
+        h1 {
+            transform: translate(0px, -30px);
+            opacity: 0;
+            transition: 500ms ease-in-out;
+            transition-property: transform,opacity;
+            transition-delay: 0.4s;
+        }
+        .meta {
+            transform: translate(0px, 30px);
+            opacity: 0;
+            transition: 500ms ease-in-out;
+            transition-property: transform,opacity;
+            transition-delay: 0.8s;
+        }
+        a {
+            transform: translate(0px, 30px);
+            opacity: 0;
+            transition: 500ms ease-in-out;
+            transition-property: transform,opacity;
+            transition-delay: 1.1s;
+        }
         &.is-selected {
             pointer-events: all;
+            h1, .meta, a {
+                transform: translate(0px, 0px);
+                opacity: 1;
+            }
         }
         .content {
             width: 100%;
@@ -49,5 +74,8 @@
     }
     .meta {
         @extend h5;
+        &.artist {
+            font-weight: 700;
+        }
     }
 }

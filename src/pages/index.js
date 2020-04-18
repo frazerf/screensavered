@@ -41,7 +41,7 @@ class Index extends React.Component {
                 <div className="content t-light">
                   <h1 dangerouslySetInnerHTML={{__html:node.lyrics}} />
                   <div className="meta-holder">
-                    <div class="meta">{node.artist} -</div>
+                    <div class="meta artist">{node.artist} -</div>
                     <div class="meta">&nbsp;{node.song}</div>
                     {node.spotifylink !== null &&
                       <a href={node.spotifylink} target="_blank" rel="noopener noreferrer">
