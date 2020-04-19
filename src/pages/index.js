@@ -23,7 +23,8 @@ const flickityHeroOptions = {
 class Index extends React.Component {
 
   render() {
-    const blogItem = this.props.data.allGoogleSheetSheet1Row.edges;
+    const songItem = this.props.data.allGoogleSheetSheet1Row.edges;
+    // Random shuffle
     function shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
@@ -31,6 +32,7 @@ class Index extends React.Component {
       }
       return a;
     }
+    // Random shuffle end
     
 
     return (
@@ -41,15 +43,21 @@ class Index extends React.Component {
             elementType={'div'} // default 'div'
             options={flickityHeroOptions}
           >
-            {shuffle(blogItem).map(({ node }) => {
+            {shuffle(songItem).map(({ node }) => {
               var rand = Math.floor((Math.random() * 357));
               return (
               <div className="screensaver-carousel--item" style={{background: "hsl(" + rand +",43%,80%)"}} key={node.id}>
                 <div className="content t-light">
-                  <h1 dangerouslySetInnerHTML={{__html:node.lyrics}} />
+                  {node.lyrics !== null &&
+                    <h1 dangerouslySetInnerHTML={{__html:node.lyrics}} />
+                  }
                   <div className="meta-holder">
-                    <div class="meta artist">{node.artist} -</div>
-                    <div class="meta">&nbsp;{node.song}</div>
+                    {node.artist !== null &&
+                      <div class="meta artist">{node.artist} -</div>
+                    }
+                    {node.song !== null &&
+                      <div class="meta">&nbsp;{node.song}</div>
+                    }
                     {node.spotifylink !== null &&
                       <a href={node.spotifylink} target="_blank" rel="noopener noreferrer">
                         <span className="icon-spotify"></span>
