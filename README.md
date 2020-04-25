@@ -13,7 +13,7 @@ A Gatsby app that cycles through content pulled from Google Sheets.
 
 ## What's in the project
 
-React front end, static site builder (Gatsby), Google Sheet intergration, SCSS
+React front end, Gatsby static site builder, Google Sheet intergration, Netlify build webhook, Google Sheets build webhook.
 
 ## Project features
 
